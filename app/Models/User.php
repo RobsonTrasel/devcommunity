@@ -18,10 +18,38 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
-        'email',
-        'password',
+        'name', 'username', 'email', 'phone', 'phone2', 'dob', 'gender', 'photo', 'address', 'bg_id', 'password', 'nal_id', 'state_id', 'lga_id', 'code', 'user_type', 'email_verified_at'
     ];
+
+    public function student_record()
+    {
+        return $this->hasOne(StudentRecord::class);
+    }
+
+    public function lga()
+    {
+        return $this->belongsTo(Lga::class);
+    }
+
+    public function state()
+    {
+        return $this->belongsTo(State::class);
+    }
+
+    public function nationality()
+    {
+        return $this->belongsTo(Nationality::class, 'nal_id');
+    }
+
+    public function blood_group()
+    {
+        return $this->belongsTo(BloodGroup::class, 'bg_id');
+    }
+
+    public function staff()
+    {
+        return $this->hasMany(StaffRecord::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
