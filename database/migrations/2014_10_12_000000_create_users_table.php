@@ -25,10 +25,10 @@ return new class extends Migration
             $table->string('photo');
             $table->string('phone')->nullable();
             $table->string('address');
-            $table->unsignedInteger('bt_id')->nullable();
-            $table->unsignedInteger('state_id')->nullable();
-            $table->unsignedInteger('lga_id')->nullable();
-            $table->unsignedInteger('nal_id')->nullable();
+            $table->unsignedBigInteger('bt_id')->nullable();
+            $table->unsignedBigInteger('state_id')->nullable();
+            $table->unsignedBigInteger('lga_id')->nullable();
+            $table->unsignedBigInteger('nal_id')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
