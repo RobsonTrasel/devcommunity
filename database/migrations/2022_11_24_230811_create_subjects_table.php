@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100)->unique();
             $table->string('slug', 100);
-            $table->unsignedInteger('my_class_id')->unique();
-            $table->unsignedInteger('teacher_id');
+            $table->unsignedBigInteger('my_class_id')->unique();
+            $table->unsignedBigInteger('teacher_id');
             $table->timestamps();
         });
     }
